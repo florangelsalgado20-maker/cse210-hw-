@@ -1,9 +1,19 @@
 using System;
 
-class Program
+namespace game
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello World! This is the Exercise1 Project.");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            Console.WriteLine("This is in C#.");
+
+            int number = 5;
+            number = 8;
+            number = number + 3;
+
+            string color = "blue";
+        }
     }
 }

@@ -1,9 +1,17 @@
 using System;
 
-class Program
+namespace game
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello World! This is the Sandbox Project.");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            Console.WriteLine("This is in C#.");
+
+            Console.WriteLine("What is your favorite color? ");
+            string color = Console.ReadLine();
+            Console.WriteLine(color);
+        }
     }
 }
