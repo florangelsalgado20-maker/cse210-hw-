@@ -6,14 +6,18 @@ namespace game
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("This is in C#.");
+            // 1. Prompt the user for input
+            Console.Write("What is your first name? ");
+            string firstName = Console.ReadLine();
 
-            int number = 5;
-            number = 8;
-            number = number + 3;
+            Console.Write("What is your last name? ");
+            string lastName = Console.ReadLine();
 
-            string color = "blue";
+            // 2. Add a blank line for clean formatting
+            Console.WriteLine();
+
+            // 3. Output the result using string interpolation ($"")
+            Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}.");
         }
     }
 }
