@@ -1,31 +1,31 @@
 using System;
 
-namespace game
+namespace Exercise2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("What is your grade percentage? ");
+            Console.Write("Enter your grade percentage: ");
             string userInput = Console.ReadLine();
-            int percent = int.Parse(userInput);
+            int gradePercentage = int.Parse(userInput);
 
             string letter = "";
             string sign = "";
 
-            if (percent >= 90)
+            if (gradePercentage >= 90)
             {
                 letter = "A";
             }
-            else if (percent >= 80)
+            else if (gradePercentage >= 80)
             {
                 letter = "B";
             }
-            else if (percent >= 70)
+            else if (gradePercentage >= 70)
             {
                 letter = "C";
             }
-            else if (percent >= 60)
+            else if (gradePercentage >= 60)
             {
                 letter = "D";
             }
@@ -34,7 +34,7 @@ namespace game
                 letter = "F";
             }
 
-            int lastDigit = percent % 10;
+            int lastDigit = gradePercentage % 10;
 
             if (lastDigit >= 7)
             {
@@ -51,23 +51,24 @@ namespace game
 
             if (letter == "A" && sign == "+")
             {
-                sign = "";
+                sign = ""; 
             }
-
+            
             if (letter == "F")
             {
-                sign = "";
+                sign = ""; 
             }
 
-            Console.WriteLine($"Your letter grade is: {letter}{sign}");
+            Console.WriteLine();
+            Console.WriteLine($"Your final grade is: {letter}{sign}");
 
-            if (percent >= 70)
+            if (gradePercentage >= 70)
             {
                 Console.WriteLine("Congratulations! You passed the course.");
             }
             else
             {
-                Console.WriteLine("Don't give up! Keep trying for next time.");
+                Console.WriteLine("Don't give up! Keep working hard for the next time.");
             }
         }
     }
