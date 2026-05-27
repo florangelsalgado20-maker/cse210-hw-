@@ -21,7 +21,7 @@ namespace ScriptureMemorizer
             string text = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
             var scripture = new Scripture(reference, text);
 
-            while (!scripture.AllWordsHidden())  // ✅ Corregido
+            while (!scripture.AllWordsHidden())  // 
             {
                 Console.Clear();
                 Console.WriteLine(scripture.GetDisplayText());
@@ -30,7 +30,7 @@ namespace ScriptureMemorizer
                 string input = Console.ReadLine()?.Trim().ToLower();
                 if (input == "quit" || input == "exit") break;
 
-                scripture.HideRandomWords(2);  // ✅ Corregido
+                scripture.HideRandomWords(2);  // 
             }
 
             Console.Clear();
