@@ -1,24 +1,31 @@
-using System;
-
-namespace ScriptureMemorizer
+// Word.cs
+public class Word
 {
-    public class Word
+    private string _text;
+    private bool _isHidden;
+
+    public Word(string text)
     {
-        private string _text;
-        private bool _isHidden;
+        _text = text;
+        _isHidden = false;
+    }
 
-        public Word(string text)
-        {
-            _text = text;
-            _isHidden = false;
-        }
+    public void Hide()
+    {
+        _isHidden = true;
+    }
 
-        public void Hide() => _isHidden = true;
-        public bool IsHidden => _isHidden;
+    public string GetDisplayText()
+    {
+        // Each hidden word is replaced with underscores 
+        // matching the EXACT number of letters:
+        // "faith" → "_____" (5 underscores)
+        // "God" → "___" (3 underscores)
+        return _isHidden ? new string('_', _text.Length) : _text;
+    }
 
-        public override string ToString()
-        {
-            return _isHidden ? new string('_', _text.Length) : _text;
-        }
+    public bool IsHidden()
+    {
+        return _isHidden;
     }
 }
