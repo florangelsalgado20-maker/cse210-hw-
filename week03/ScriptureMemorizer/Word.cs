@@ -1,31 +1,72 @@
-// Word.cs
-public class Word
+using System;
+
+namespace ScriptureMemorizer
 {
-    private string _text;
-    private bool _isHidden;
-
-    public Word(string text)
+    /// <summary>
+    /// Represents a single word in a scripture with its hidden/shown state.
+    /// </summary>
+    public class Word
     {
-        _text = text;
-        _isHidden = false;
-    }
+        private string _text;
+        private bool _isHidden;
 
-    public void Hide()
-    {
-        _isHidden = true;
-    }
+        /// <summary>
+        /// Initializes a new Word with the given text.
+        /// </summary>
+        /// <param name="text">The word text to store</param>
+        public Word(string text)
+        {
+            _text = text;
+            _isHidden = false;
+        }
 
-    public string GetDisplayText()
-    {
-        // Each hidden word is replaced with underscores 
-        // matching the EXACT number of letters:
-        // "faith" → "_____" (5 underscores)
-        // "God" → "___" (3 underscores)
-        return _isHidden ? new string('_', _text.Length) : _text;
-    }
+        /// <summary>
+        /// Hides the word by setting its state to hidden.
+        /// </summary>
+        public void Hide()
+        {
+            _isHidden = true;
+        }
 
-    public bool IsHidden()
-    {
-        return _isHidden;
+        /// <summary>
+        /// Shows the word by setting its state to visible.
+        /// </summary>
+        public void Show()
+        {
+            _isHidden = false;
+        }
+
+        /// <summary>
+        /// Gets the display text - either the word or underscores matching its length.
+        /// Each hidden word is replaced with underscores matching the EXACT number of letters.
+        /// Example: "faith" → "_____" (5 underscores), "God" → "___" (3 underscores)
+        /// </summary>
+        /// <returns>The word or underscores if hidden</returns>
+        public string GetDisplayText()
+        {
+            if (_isHidden)
+            {
+                return new string('_', _text.Length);
+            }
+            return _text;
+        }
+
+        /// <summary>
+        /// Checks if the word is currently hidden.
+        /// </summary>
+        /// <returns>True if hidden, false if shown</returns>
+        public bool IsHidden()
+        {
+            return _isHidden;
+        }
+
+        /// <summary>
+        /// Gets the original text of the word.
+        /// </summary>
+        /// <returns>The word text</returns>
+        public string GetText()
+        {
+            return _text;
+        }
     }
 }
